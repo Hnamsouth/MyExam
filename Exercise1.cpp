@@ -53,13 +53,5 @@ int main(){
         case 8: cout<<"tam"; break;
         case 9: cout<<"chin"; break;
     }
-    
-    for(int i=1;i<10;i++){
-        if(i==1){
-
-        }
-    }
-    
-    
     return 0;
 }

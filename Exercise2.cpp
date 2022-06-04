@@ -6,7 +6,7 @@ using namespace std;
 void sortC(char s[1000]){
     // cout<<strlen(s);
     for(int i=0;i<strlen(s);i++){
-        for(int j=0;j<strlen(s);j++){
+        for(int j=1;j<strlen(s);j++){
             if(s[j]<s[j-1]){
                 int cdoi = s[j];
                  s[j]=s[j-1];
