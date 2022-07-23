@@ -1,0 +1,28 @@
+<div class="col-agl items-cnt m-3 " *ngFor="let i of agl">
+    <div class="img-ct row">
+        <div class="col-2 "><span class="if-text">New</span></div><img class="col-8" src="{{i.image}}" alt="">
+        <div class="col-2 contact">
+
+        </div>
+    </div>
+    <div style="height: 38px;">
+        <h6 class="name">{{i.name}}</h6>
+    </div>
+    <div class="price">
+        <div><span class="price-cr">${{((i.price/23405)*100/70).toFixed(2)}}</span><span class="price-old">${{(i.price/23405).toFixed(2)}}</span></div>
+        <div>
+            <div class="container">
+                <span id="rateMe2" class="empty-stars"></span>
+            </div>
+
+            <!-- rating.js file -->
+            <script src="js/addons/rating.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#rateMe2').mdbRate();
+                });
+            </script>
+        </div>
+    </div>
+    <div><button class="add-items" type="submit">Add</button></div>
+</div>
