@@ -1,26 +1,38 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule } from '@angular/router';
+import {  RouterModule, Routes } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Cnt1 } from './test/cnt1';
-import { Cnt2 } from './test/cnt2';
-
+import { FVRInboxComponent } from './favorites/inbox/inbox.component';
+import { FVRSentItemsComponent } from './favorites/sent-items/sent-items.component';
+import { DraftsComponent } from './John/drafts/drafts.component';
+import { DeletedItemsComponent } from './John/deleted-items/deleted-items.component';
+import { SentsItemsComponent } from './John/sents-items/sents-items.component';
+import { OutBoxComponent } from './John/out-box/out-box.component';
+import { InboxComponent } from './John/inbox/inbox.component';
+import { AppRoutingModule } from './app-routing.module';
+const routes: Routes = [
+];
 @NgModule({
   declarations: [
-    AppComponent,
-    Cnt1,
-    Cnt2
+      DraftsComponent,
+      DeletedItemsComponent,
+      SentsItemsComponent,
+      OutBoxComponent,
+      InboxComponent,
+      FVRInboxComponent,
+      FVRSentItemsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    ReactiveFormsModule,
+    ],
+    // su dung dieu khien Form
   providers: [],
   bootstrap: [AppComponent]
 })

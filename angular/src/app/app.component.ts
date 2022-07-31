@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { data1, IScategory } from './interface/AGL';
+import { RouterModule,Route } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,9 @@ import { data1, IScategory } from './interface/AGL';
   styleUrls: ['./app.component.css','../assets/test.css']
 })
 export class AppComponent {
+  favoritesList=['Inbox','Sent Items'];
+  JohnList=['Inbox','Drafts','Inbox','Sent Items','OutBox'];
+  constructor (private http:HttpClient){
 
-  rtl=[];
-  title = 'T2204M';
-  data:data1[]|undefined;
-    constructor (private http:HttpClient){
-      const url = 'https://foodgroup.herokuapp.com/api/menu';
-      this.http.get<IScategory>(url)
-      .subscribe(value =>{
-        this.data=value.data
-        // console.log(this.data);
-      })
   }
 }
