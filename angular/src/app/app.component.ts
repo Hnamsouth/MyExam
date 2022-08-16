@@ -9,7 +9,7 @@ import { RouterModule,Route } from '@angular/router';
   styleUrls: ['./app.component.css','../assets/test.css']
 })
 export class AppComponent {
-  favoritesList=['Inbox','Sent Items'];
+  favoritsList=['Inbox','Sent Items'];
   JohnList=['Inbox','Drafts','Inbox','Sent Items','OutBox'];
   constructor (private http:HttpClient){
 

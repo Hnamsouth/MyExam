@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {  RouterModule, Routes } from '@angular/router';
@@ -23,17 +23,20 @@ const routes: Routes = [
       OutBoxComponent,
       InboxComponent,
       FVRInboxComponent,
-      FVRSentItemsComponent
+      FVRSentItemsComponent,
+      AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     ],
     // su dung dieu khien Form
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }
