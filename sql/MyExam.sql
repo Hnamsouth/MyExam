@@ -54,7 +54,15 @@ insert into Employee values
 	add constraint CK_Salary check(Salary>0)
 /*4. Tạo trình kích hoạt có tên tg_chkBirthday để đảm bảo tuổi của Nhân viên lớn hơn 22,
 sử dụng giá trị ngày sinh để kiểm tra tuổi [2 dấu].*/
-	--create trigger tg_chkBirthday
+	create trigger tg_chkBirthday
+	on Employee for insert as
+	begin 
+		if exists (select * from inserted where 22 > (getdate() - Birthday))
+		begin 
+		print 'tuoi khong duoc thap hon 22'
+		rollback tran
+		end
+	end
 
 /*5. Tạo một chỉ mục duy nhất, không phân cụm có tên là IX_DepartmentName on
 Cột DepartName trên bảng Department [1 dấu].*/
@@ -66,7 +74,7 @@ select FirstName,LastName,DepartName from Employee as e join Department as d on 
 
 /*7. Tạo một thủ tục được lưu trữ có tên sp_getAllEmp chấp nhận ID Cục là
 đã cho tham số đầu vào và hiển thị tất cả nhân viên trong Bộ phận đó [2 dấu].*/
-alter procedure sp_getAllEmp @ID char(6) as 
+create procedure sp_getAllEmp @ID char(6) as 
 select * from Employee where DepartID in 
 (select Id from  Department where Id = 
 (select DepartID from Employee where  EmpCode = @ID ))
