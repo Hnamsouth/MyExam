@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 03, 2022 lúc 04:13 AM
+-- Thời gian đã tạo: Th12 03, 2022 lúc 04:17 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -43,6 +43,16 @@ INSERT INTO `book` (`id`, `name`, `author`, `price`) VALUES
 ('id 2', 'book2', 'author 2', 500000),
 ('id b1', 'book name 1', 'author 123', 100000),
 ('id b11', 'book name 14', 'author 1233', 200000);
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `book`
+--
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
