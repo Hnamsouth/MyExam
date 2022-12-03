@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="652.0" prefWidth="498.0" styleClass="pane-bg" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EX2.Get.Controller">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="124.0" layoutX="-18.0" layoutY="497.0" rotate="67.4" stroke="RED" strokeType="INSIDE" strokeWidth="0.0" width="125.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#00000028" />
+                        <Stop color="#00000028" offset="0.007662835249042145" />
+                  <Stop color="#17677869" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </fill></Rectangle>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff40" height="79.0" layoutX="391.0" layoutY="91.0" rotate="-120.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="78.0">
+            <rotationAxis>
+                <Point3D x="45.0" y="45.0" />
+            </rotationAxis>
+         <effect>
+            <DropShadow color="WHITE" height="77.34" radius="38.17" spread="0.05" width="77.34" />
+         </effect>
+        </Rectangle>
+        <TextField fx:id="txtBookName" layoutX="88.0" layoutY="213.0" prefHeight="48.0" prefWidth="306.0" promptText="Book Name" styleClass="inp-text" />
+        <TextField fx:id="txtBookID" layoutX="88.0" layoutY="131.0" prefHeight="48.0" prefWidth="306.0" promptText="Book ID" styleClass="inp-text" />
+        <TextField fx:id="txtPrice" layoutX="88.0" layoutY="363.0" prefHeight="48.0" prefWidth="306.0" promptText="Price" styleClass="inp-text" />
+        <Button layoutX="196.0" layoutY="447.0" mnemonicParsing="false" onAction="#Add" prefHeight="48.0" prefWidth="91.0" styleClass="btn-submit" text="Add " />
+        <Button layoutX="375.0" layoutY="597.0" mnemonicParsing="false" onAction="#Show" prefHeight="37.0" prefWidth="111.0" style="-fx-background-color: NONE;" text="Show Book&gt;&gt;" textFill="WHITE" underline="true">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Button>
+        <Text fill="WHITE" layoutX="77.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Exam">
+            <font>
+                <Font name="Segoe Script Bold" size="70.0" />
+            </font>
+        </Text>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff24" height="79.0" layoutX="-50.0" layoutY="35.0" rotate="50.9" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="78.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="79.0" layoutX="235.0" layoutY="259.0" rotate="-176.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="78.0">
+            <rotationAxis>
+                <Point3D x="-45.0" y="-45.0" z="90.0" />
+            </rotationAxis>
+        </Rectangle>
+        <TextField fx:id="txtAuthor" layoutX="88.0" layoutY="288.0" prefHeight="48.0" prefWidth="306.0" promptText="Author" styleClass="inp-text" />
+      <Button layoutX="156.0" layoutY="529.0" mnemonicParsing="false" onAction="#Save" prefHeight="48.0" prefWidth="170.0" styleClass="btn-submit" text="Save">
+         <effect>
+            <Reflection fraction="0.64" topOpacity="0.39">
+               <input>
+                  <DropShadow color="#ffffff77" />
+               </input>
+            </Reflection>
+         </effect>
+      </Button>
+    </children>
+   <effect>
+      <Blend mode="SOFT_LIGHT" opacity="0.37" />
+   </effect>
+</AnchorPane>
